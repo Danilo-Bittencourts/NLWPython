@@ -11,6 +11,7 @@ class EventosRepository:
       except Exception as exception:
         db.session.rollback()
         raise exception
+      
   def select_event(self, event_name: str) -> Eventos:
     with DBConnectionHandler() as db:
       data = (
